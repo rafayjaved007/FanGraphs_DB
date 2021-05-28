@@ -6,7 +6,13 @@
 import scrapy
 
 
-class FangraphsScraperItem(scrapy.Item):
-    # define the fields for your item here like:
-    # name = scrapy.Field()
-    pass
+class ScheduleItem(scrapy.Item):
+    team = scrapy.Field()
+    date = scrapy.Field()
+    opp = scrapy.Field()
+    team_win_prob = scrapy.Field()
+    w_or_l = scrapy.Field()
+    team_runs = scrapy.Field()
+    opp_runs = scrapy.Field()
+    team_starter = scrapy.Field()
+    opp_starter = scrapy.Field()

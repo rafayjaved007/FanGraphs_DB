@@ -128,3 +128,4 @@ dmypy.json
 # Pyre type checker
 .pyre/
 /fanGraphs_system/.idea/
+/fanGraphs_scraper/schedule.csv
