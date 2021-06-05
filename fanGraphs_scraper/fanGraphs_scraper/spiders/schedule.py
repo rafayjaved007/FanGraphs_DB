@@ -50,13 +50,7 @@ class NoonSpider(scrapy.Spider):
             items['team_starter'] = team_starter
             items['opp_starter'] = opp_starter
 
-            # data = {"team": "Blue Jays", "date": "Apr 1, 2021", "opp": "NYY", "team_win_prob": "39.0%", "w_or_l": "W", "team_runs": "3", "opp_runs": "2", "team_starter": "Hyun Jin Ryu", "opp_starter": "Gerrit Cole"}
-
-
-            # print(json.dumps(dict(items)))
             headers = {'Content-type': 'application/json', 'Accept': '*/*'}
             requests.post(url='http://127.0.0.1:8000/core/schedule/', data=json.dumps(dict(items)), headers=headers)
 
-            # yield requests.post(data=team=team,date=date,opp=opp,team_win_prob=team_win_prob,w_or_l=w_or_l,
-            #                     team_runs=team_runs,opp_runs=opp_runs,team_starter=team_starter,opp_starter=opp_starter)
 
