@@ -6,7 +6,7 @@ from selenium import webdriver
 
 def get_players():
     players_urls = []
-    players = json.loads(requests.get(url='http://127.0.0.1:8000/core/pitchers/').text)['results']
+    players = json.loads(requests.get(url='http://127.0.0.1:8000/core/pitchers/?limit=400').text)['results']
 
     for player in players:
         players_urls.append(player['url'])
@@ -77,9 +77,9 @@ for player_url, player in zip(urls, players):
                 'fip_dash': fip_dash.text,
                 'fip': fip.text
             }
-            print(data)
-            # headers = {'Content-type': 'application/json', 'Accept': '*/*'}
-            # requests.post(url='http://127.0.0.1:8000/core/hitters-advanced/', data=json.dumps(data), headers=headers)
+            # print(data)
+            headers = {'Content-type': 'application/json', 'Accept': '*/*'}
+            requests.post(url='http://127.0.0.1:8000/core/pitchers-advanced/', data=json.dumps(data), headers=headers)
 
         players_scraped += 1
         print(f'Player scraped : {players_scraped}')

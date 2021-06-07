@@ -270,3 +270,107 @@ class HittersPlateDiscipline(models.Model):
 
     def __str__(self):
         return self.date
+
+
+class DualHittersStandard(models.Model):
+    player = models.ForeignKey(Pitcher, on_delete=models.CASCADE)
+    team_name = models.ForeignKey(Team, on_delete=models.CASCADE)
+    date = models.CharField(max_length=50, blank=True, null=True)
+    team = models.CharField(max_length=50, blank=True, null=True)
+    opp = models.CharField(max_length=50, blank=True, null=True)
+    bo = models.CharField(max_length=50, blank=True, null=True)
+    pos = models.CharField(max_length=50, blank=True, null=True)
+    g = models.CharField(max_length=50, blank=True, null=True)
+    ab = models.CharField(max_length=50, blank=True, null=True)
+    pa = models.CharField(max_length=50, blank=True, null=True)
+    h = models.CharField(max_length=50, blank=True, null=True)
+    one_b = models.CharField(max_length=50, blank=True, null=True)
+    two_b = models.CharField(max_length=50, blank=True, null=True)
+    three_b = models.CharField(max_length=50, blank=True, null=True)
+    hr = models.CharField(max_length=50, blank=True, null=True)
+    r = models.CharField(max_length=50, blank=True, null=True)
+    rbi = models.CharField(max_length=50, blank=True, null=True)
+    bb = models.CharField(max_length=50, blank=True, null=True)
+    ibb = models.CharField(max_length=50, blank=True, null=True)
+    so = models.CharField(max_length=50, blank=True, null=True)
+    hbp = models.CharField(max_length=50, blank=True, null=True)
+    sf = models.CharField(max_length=50, blank=True, null=True)
+    sh = models.CharField(max_length=50, blank=True, null=True)
+    gdp = models.CharField(max_length=50, blank=True, null=True)
+    sb = models.CharField(max_length=50, blank=True, null=True)
+    cs = models.CharField(max_length=50, blank=True, null=True)
+    avg = models.CharField(max_length=50, blank=True, null=True)
+
+    def __str__(self):
+        return self.date
+
+
+class DualHittersAdvanced(models.Model):
+    player = models.ForeignKey(Pitcher, on_delete=models.CASCADE)
+    team_name = models.ForeignKey(Team, on_delete=models.CASCADE)
+    date = models.CharField(max_length=50, blank=True, null=True)
+    team = models.CharField(max_length=50, blank=True, null=True)
+    opp = models.CharField(max_length=50, blank=True, null=True)
+    bo = models.CharField(max_length=50, blank=True, null=True)
+    pos = models.CharField(max_length=50, blank=True, null=True)
+    bb_percentage = models.CharField(max_length=50, blank=True, null=True)
+    k_percentage = models.CharField(max_length=50, blank=True, null=True)
+    bb_k = models.CharField(max_length=50, blank=True, null=True)
+    avg = models.CharField(max_length=50, blank=True, null=True)
+    obp = models.CharField(max_length=50, blank=True, null=True)
+    slg = models.CharField(max_length=50, blank=True, null=True)
+    ops = models.CharField(max_length=50, blank=True, null=True)
+    iso = models.CharField(max_length=50, blank=True, null=True)
+    spd = models.CharField(max_length=50, blank=True, null=True)
+    babip = models.CharField(max_length=50, blank=True, null=True)
+    wrc = models.CharField(max_length=50, blank=True, null=True)
+    wraa = models.CharField(max_length=50, blank=True, null=True)
+    woba = models.CharField(max_length=50, blank=True, null=True)
+    wrc_plus = models.CharField(max_length=50, blank=True, null=True)
+
+    def __str__(self):
+        return self.date
+
+
+class DualHittersPlateDiscipline(models.Model):
+    player = models.ForeignKey(Pitcher, on_delete=models.CASCADE)
+    team_name = models.ForeignKey(Team, on_delete=models.CASCADE)
+    date = models.CharField(max_length=50, blank=True, null=True)
+    team = models.CharField(max_length=50, blank=True, null=True)
+    opp = models.CharField(max_length=50, blank=True, null=True)
+    bo = models.CharField(max_length=50, blank=True, null=True)
+    pos = models.CharField(max_length=50, blank=True, null=True)
+    o_swing_percent = models.CharField(max_length=50, blank=True, null=True)
+    z_swing_percentage = models.CharField(max_length=50, blank=True, null=True)
+    swing_percentage = models.CharField(max_length=50, blank=True, null=True)
+    o_contact_percentage = models.CharField(max_length=50, blank=True, null=True)
+    z_contact_percentage = models.CharField(max_length=50, blank=True, null=True)
+    contact_percentage = models.CharField(max_length=50, blank=True, null=True)
+    zone_percentage = models.CharField(max_length=50, blank=True, null=True)
+    f_strike_percentage = models.CharField(max_length=50, blank=True, null=True)
+    swstr_percentage = models.CharField(max_length=50, blank=True, null=True)
+
+    def __str__(self):
+        return self.date
+
+
+class DualHittersWinProbability(models.Model):
+    player = models.ForeignKey(Pitcher, on_delete=models.CASCADE)
+    team_name = models.ForeignKey(Team, on_delete=models.CASCADE)
+    date = models.CharField(max_length=50, blank=True, null=True)
+    team = models.CharField(max_length=50, blank=True, null=True)
+    opp = models.CharField(max_length=50, blank=True, null=True)
+    bo = models.CharField(max_length=50, blank=True, null=True)
+    pos = models.CharField(max_length=50, blank=True, null=True)
+    wpa = models.CharField(max_length=50, blank=True, null=True)
+    minus_wpa = models.CharField(max_length=50, blank=True, null=True)
+    plus_wpa = models.CharField(max_length=50, blank=True, null=True)
+    re24 = models.CharField(max_length=50, blank=True, null=True)
+    rew = models.CharField(max_length=50, blank=True, null=True)
+    pli = models.CharField(max_length=50, blank=True, null=True)
+    phli = models.CharField(max_length=50, blank=True, null=True)
+    wpa_li = models.CharField(max_length=50, blank=True, null=True)
+    clutch = models.CharField(max_length=50, blank=True, null=True)
+
+    def __str__(self):
+        return self.date

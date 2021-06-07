@@ -55,3 +55,23 @@ class HittersAdvancedViewSet(viewsets.ModelViewSet):
 class HittersPlateDisciplineViewSet(viewsets.ModelViewSet):
     queryset = HittersPlateDiscipline.objects.all()
     serializer_class = HittersPlateDisciplineSerializer
+
+
+class DualHittersStandardViewSet(viewsets.ModelViewSet):
+    queryset = DualHittersStandard.objects.all()
+    serializer_class = DualHittersStandardSerializer
+
+
+class DualHittersAdvancedViewSet(viewsets.ModelViewSet):
+    queryset = DualHittersAdvanced.objects.all()
+    serializer_class = DualHittersAdvancedSerializer
+
+
+class DualHittersWinProbabilityViewSet(viewsets.ModelViewSet):
+    queryset = DualHittersWinProbability.objects.all()
+    serializer_class = DualHittersWinProbabilitySerializer
+
+
+class DualHittersPlateDisciplineViewSet(viewsets.ModelViewSet):
+    queryset = DualHittersPlateDiscipline.objects.all()
+    serializer_class = DualHittersPlateDisciplineSerializer

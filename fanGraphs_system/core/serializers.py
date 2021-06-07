@@ -89,7 +89,7 @@ class PitchersPlateDisciplineSerializer(serializers.ModelSerializer):
 
     def validate(self, attr):
         attr['team_name'] = Team.objects.get(name=attr['team_name'])
-        attr['player'] = Hitter.objects.get(player=attr['player'])
+        attr['player'] = Pitcher.objects.get(player=attr['player'])
         return attr
 
 
@@ -148,4 +148,64 @@ class HittersPlateDisciplineSerializer(serializers.ModelSerializer):
     def validate(self, attr):
         attr['team_name'] = Team.objects.get(name=attr['team_name'])
         attr['player'] = Hitter.objects.get(player=attr['player'])
+        return attr
+
+
+class DualHittersStandardSerializer(serializers.ModelSerializer):
+    team_name = serializers.CharField(max_length=100)
+    player = serializers.CharField(max_length=100)
+
+    class Meta:
+        model = DualHittersStandard
+        fields = '__all__'
+        depth = 1
+
+    def validate(self, attr):
+        attr['team_name'] = Team.objects.get(name=attr['team_name'])
+        attr['player'] = Pitcher.objects.get(player=attr['player'])
+        return attr
+
+
+class DualHittersAdvancedSerializer(serializers.ModelSerializer):
+    team_name = serializers.CharField(max_length=100)
+    player = serializers.CharField(max_length=100)
+
+    class Meta:
+        model = DualHittersAdvanced
+        fields = '__all__'
+        depth = 1
+
+    def validate(self, attr):
+        attr['team_name'] = Team.objects.get(name=attr['team_name'])
+        attr['player'] = Pitcher.objects.get(player=attr['player'])
+        return attr
+
+
+class DualHittersWinProbabilitySerializer(serializers.ModelSerializer):
+    team_name = serializers.CharField(max_length=100)
+    player = serializers.CharField(max_length=100)
+
+    class Meta:
+        model = DualHittersWinProbability
+        fields = '__all__'
+        depth = 1
+
+    def validate(self, attr):
+        attr['team_name'] = Team.objects.get(name=attr['team_name'])
+        attr['player'] = Pitcher.objects.get(player=attr['player'])
+        return attr
+
+
+class DualHittersPlateDisciplineSerializer(serializers.ModelSerializer):
+    team_name = serializers.CharField(max_length=100)
+    player = serializers.CharField(max_length=100)
+
+    class Meta:
+        model = DualHittersPlateDiscipline
+        fields = '__all__'
+        depth = 1
+
+    def validate(self, attr):
+        attr['team_name'] = Team.objects.get(name=attr['team_name'])
+        attr['player'] = Pitcher.objects.get(player=attr['player'])
         return attr

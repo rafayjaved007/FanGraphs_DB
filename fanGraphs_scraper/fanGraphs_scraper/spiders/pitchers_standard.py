@@ -16,14 +16,13 @@ def get_players():
 driver = webdriver.Firefox()
 teams_scraped = 0
 
-# players = [{'player': 'Rafael Ortega', 'team': 'Cubs'}, {'player': 'Ketel Marte', 'team': 'D-backs'}, {'player': 'Matt Beaty', 'team': 'Dodgers'}]
-# urls = ['https://www.fangraphs.com/players/rafael-ortega/10323/stats?position=OF',
-#         'https://www.fangraphs.com/players/ketel-marte/13613/stats?position=2B/SS',
-#         'https://www.fangraphs.com/players/matt-beaty/17710/stats?position=1B/OF']
-urls, players = get_players()
+players = [{'player': 'Shohei Ohtani', 'team': 'Angels'}]
+urls = ['https://www.fangraphs.com/players/shohei-ohtani/19755/stats']
+# urls, players = get_players()
 for player_url, player in zip(urls, players):
     try:
         driver.get(player_url.replace("stats", "game-log"))
+        print('Hello')
 
         s_url = driver.find_element_by_xpath(
             '//div[contains(@id,"content")]//ul[contains(@class,"menu-mega__game-log")]/li[2]/a').get_attribute("href")
